@@ -111,12 +111,11 @@ Falla una función esencial, se pierden datos, los precios son incorrectos o exi
 | BUG-09 |  |  |  |  |  |  |
 
 ---
-
 ## 7. Control de ejecución
 
 | FECHA | VERSIÓN APROBADA | RESPONSABLE | PRUEBAS APROBADAS | PRUEBAS FALLIDAS | DECISIÓN |
 | --- | --- | --- | --- | --- | --- |
-| MM-DD-AA |  |  |  |  |  |
+| 01-11-2026 | develop (v0.1) | Thomas — QA / Tester | 9 | 0 | Aprobado |
 | MM-DD-AA |  |  |  |  |  |
 | MM-DD-AA |  |  |  |  |  |
 | MM-DD-AA |  |  |  |  |  |
