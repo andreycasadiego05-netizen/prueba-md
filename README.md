@@ -32,13 +32,12 @@
 
 ---
 
-## 3. Matriz de casos de prueba
 
 ## 3. Matriz de casos de prueba
 
 | ID | CASO DE PRUEBA | DATOS DE ENTRADA | PASOS | RESULTADO ESPERADO | ESTADO |
 |---|---|---|---|---|---|
-| QA-01 | Verificar disponibilidad del backend y configuración CORS | Método: GET. Endpoint: `/api/health`. | 1. Enviar una petición GET al endpoint. 2. Verificar el código HTTP. 3. Comprobar el contenido de la respuesta y los encabezados CORS. | Respuesta HTTP 200 con `{ "status": "ok" }` y configuración CORS correcta. | PENDIENTE |
+| QA-01 | Verificar disponibilidad del backend y configuración CORS |Método: GET URL: /api/health Headers: Origin: http://localhost:5173 | 1 Iniciar servidor backend en puerto 3000. 2. Enviar petición GET a /api/health con encabezado Origin. 3. Verificar código de estado HTTP. 4. Verificar encabezado Access-Control-Allow-Origin. 5. Validar estructura del cuerpo JSON. |HTTP 200 OK, encabezado Access-Control-Allow-Origin retornado correctamente, y cuerpo JSON { "success": true, "data": { "status": "ok", ... } } confirmando disponibilidad del servicio.| PASÓ |
 | QA-02 | Consultar catálogo de productos activos y opciones de personalización | Método: GET. Endpoint: `/api/products`. | 1. Enviar una petición GET. 2. Revisar los productos devueltos. 3. Verificar que estén activos y contengan sus opciones de personalización. | Devuelve una lista de productos activos (`activo: true`) con sus respectivas opciones de personalización. | PENDIENTE |
 | QA-03 | Filtrar productos por categoría | Método: GET. Endpoint: `/api/products?categoria=Prendas`. | 1. Enviar una petición GET con el parámetro categoria. 2. Revisar los productos devueltos. 3. Comprobar que todos pertenezcan a la categoría solicitada. 4. Verificar el comportamiento con diferentes mayúsculas y minúsculas. | Devuelve únicamente productos de la categoría Prendas y aplica correctamente el filtro sin depender de mayúsculas o minúsculas. | PENDIENTE |
 | QA-04 | Validar cálculo del total y snapshots de pedidos | Método: POST. Endpoint: `/api/orders`. Datos: producto, cantidad, opciones de personalización y descuento. | 1. Enviar una solicitud de creación de pedido. 2. Verificar el cálculo del total. 3. Consultar el pedido guardado. 4. Comprobar que los snapshots conserven los datos originales. | El total coincide con `((base + extras) * cantidad) - descuento` y los snapshots conservan los datos originales del pedido. | PENDIENTE |
